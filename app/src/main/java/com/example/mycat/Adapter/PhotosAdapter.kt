@@ -14,7 +14,7 @@ import com.example.mycat.Model.ResponseItem
 import com.example.mycat.R
 import com.google.android.material.imageview.ShapeableImageView
 
-class SearchAdapter(var items:ArrayList<BreedsItem>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class PhotosAdapter(var items:ArrayList<ResponseItem>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     var clickitemhome:((word:String)-> Unit) ? = null
 
@@ -31,10 +31,10 @@ class SearchAdapter(var items:ArrayList<BreedsItem>): RecyclerView.Adapter<Recyc
             val iv_photo = holder.iv_photo
             val item = holder.item
 
-            tv_title.text = home.name
+            tv_title.text = home.subId
 
             Glide.with(holder.itemView.context)
-                .load(home.image?.url)
+                .load(home.url)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .error(R.drawable.ic_launcher_background)
                 .placeholder(R.drawable.ic_launcher_foreground)

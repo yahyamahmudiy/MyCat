@@ -1,16 +1,18 @@
 package com.example.mycat.Networking
 
+import com.example.mycat.Model.BreedsItem
 import com.example.mycat.Model.ResponseItem
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import okhttp3.ResponseBody
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Query
+import retrofit2.http.*
+import java.io.File
 
 interface ApiService {
 
-    @GET("images/search?limit=50&page=1&order=Desc")
-    fun getAll():Call<ArrayList<ResponseItem>>
+    @GET("breeds")
+    fun getAll():Call<ArrayList<BreedsItem>>
 
     @GET("images")
     fun getMyCats(
@@ -18,7 +20,8 @@ interface ApiService {
         @Query("limit") per_page: Int = 20)
     :Call<ArrayList<ResponseItem>>
 
-    //@POST("images/upload")
-    //fun makePhoto(@Body file:)
+    @Multipart
+    @POST("images/upload")
+    fun uploadFile(@Part image: MultipartBody.Part, @Part("sub_id") name: String): Call<ResponseItem>
 
 }

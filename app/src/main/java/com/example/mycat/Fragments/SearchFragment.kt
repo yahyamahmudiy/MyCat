@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.mycat.Adapter.SearchAdapter
 import com.example.mycat.Helper.SpaceItemDecoration
+import com.example.mycat.Model.BreedsItem
 import com.example.mycat.Model.ResponseItem
 import com.example.mycat.Networking.RetrofitHttp
 import com.example.mycat.R
@@ -23,7 +24,7 @@ class SearchFragment : Fragment() {
     lateinit var recyclerView: RecyclerView
     lateinit var manager: StaggeredGridLayoutManager
     lateinit var adapter: SearchAdapter
-    private var list =  ArrayList<ResponseItem>()
+    private var list =  ArrayList<BreedsItem>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,22 +50,22 @@ class SearchFragment : Fragment() {
     }
 
     private fun apiGetPhotosRetrofit(){
-        RetrofitHttp.apiService.getAll().enqueue(object : Callback<ArrayList<ResponseItem>>{
-            override fun onResponse(call: Call<ArrayList<ResponseItem>>, response: Response<ArrayList<ResponseItem>>) {
+        RetrofitHttp.apiService.getAll().enqueue(object : Callback<ArrayList<BreedsItem>>{
+            override fun onResponse(call: Call<ArrayList<BreedsItem>>, response: Response<ArrayList<BreedsItem>>) {
                 Log.d("@@@", "onResponseSearch: ${response.body()}")
                 list.clear()
                 list.addAll(response.body()!!)
                 refreshAdapter(list)
             }
 
-            override fun onFailure(call: Call<ArrayList<ResponseItem>>, t: Throwable) {
+            override fun onFailure(call: Call<ArrayList<BreedsItem>>, t: Throwable) {
                 Log.d("@@@", "onFailureSearch: ${t.localizedMessage}")
             }
 
         })
     }
 
-    fun refreshAdapter(list: ArrayList<ResponseItem>){
+    fun refreshAdapter(list: ArrayList<BreedsItem>){
         adapter = SearchAdapter(list)
         recyclerView.adapter = adapter
     }

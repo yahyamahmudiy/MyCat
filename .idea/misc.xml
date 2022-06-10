@@ -4,12 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/MyCat/app/src/main/res/drawable/ic_add.xml" value="0.2703125" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/MyCat/app/src/main/res/drawable/ic_more.xml" value="0.2703125" />
         <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/MyCat/app/src/main/res/drawable/item_selector.xml" value="0.2703125" />
         <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/MyCat/app/src/main/res/drawable/round_shape_gray.xml" value="0.2703125" />
         <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/MyCat/app/src/main/res/drawable/round_shape_transparent.xml" value="0.2703125" />
         <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/MyCat/app/src/main/res/layout/activity_gellerey.xml" value="0.24864130434782608" />
         <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/MyCat/app/src/main/res/layout/activity_main.xml" value="0.24864130434782608" />
         <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/MyCat/app/src/main/res/layout/activity_photos.xml" value="0.24864130434782608" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/MyCat/app/src/main/res/layout/fragment_gallery.xml" value="0.24010416666666667" />
         <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/MyCat/app/src/main/res/layout/fragment_photos.xml" value="0.24864130434782608" />
         <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/MyCat/app/src/main/res/layout/fragment_search.xml" value="0.24864130434782608" />
         <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/MyCat/app/src/main/res/layout/item_layout_search.xml" value="0.24864130434782608" />

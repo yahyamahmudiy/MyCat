@@ -1,9 +1,12 @@
 package com.example.mycat.Activity
 
+import android.app.FragmentManager
+import android.app.FragmentTransaction
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.example.mycat.Fragments.GalleryFragment
 import com.example.mycat.Fragments.PhotosFragment
 import com.example.mycat.Fragments.SearchFragment
 import com.example.mycat.R
@@ -65,9 +68,18 @@ class MainActivity : AppCompatActivity() {
 
         val floatingActionButton = findViewById<FloatingActionButton>(R.id.floatingactionbutton)
         floatingActionButton.setOnClickListener {
-            val intent = Intent(this, GellereyActivity::class.java)
-            startActivity(intent)
+            //val intent = Intent(this, GellereyActivity::class.java)
+            //startActivity(intent)
+            supportFragmentManager.beginTransaction().replace(R.id.frameLayout, GalleryFragment()).commit()
+
         }
 
+    }
+    fun setCurrentFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.frameLayout, fragment)
+            addToBackStack("back")
+            commit()
+        }
     }
 }

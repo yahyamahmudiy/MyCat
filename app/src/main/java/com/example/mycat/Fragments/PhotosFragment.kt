@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.example.mycat.Adapter.PhotosAdapter
 import com.example.mycat.Adapter.SearchAdapter
 import com.example.mycat.Helper.SpaceItemDecoration
 import com.example.mycat.Model.ResponseItem
@@ -21,7 +22,7 @@ import retrofit2.Response
 class PhotosFragment : Fragment() {
     lateinit var recyclerView: RecyclerView
     lateinit var manager: StaggeredGridLayoutManager
-    lateinit var adapter: SearchAdapter
+    lateinit var adapter: PhotosAdapter
     private var list =  ArrayList<ResponseItem>()
     private var page = 0
 
@@ -60,7 +61,7 @@ class PhotosFragment : Fragment() {
     }
 
     fun refreshAdapter(list: ArrayList<ResponseItem>){
-        adapter = SearchAdapter(list)
+        adapter = PhotosAdapter(list)
         recyclerView.adapter = adapter
     }
 
